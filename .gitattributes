@@ -76,7 +76,6 @@
 *.xml filter=lfs diff=lfs merge=lfs -text
 *.mask filter=lfs diff=lfs merge=lfs -text
 *.csv filter=lfs diff=lfs merge=lfs -text
-*.md filter=lfs diff=lfs merge=lfs -text
 *.html filter=lfs diff=lfs merge=lfs -text
 *.TGA filter=lfs diff=lfs merge=lfs -text
 *.mqo filter=lfs diff=lfs merge=lfs -text
@@ -87,3 +86,4 @@
 *.un~ filter=lfs diff=lfs merge=lfs -text
 *.cs~ filter=lfs diff=lfs merge=lfs -text
 *.pdn filter=lfs diff=lfs merge=lfs -text
+*.md filter=lfs diff=lfs merge=lfs -text
