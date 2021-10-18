@@ -58,7 +58,7 @@ namespace GalaxySixthSensey.AddBoneNamesSuffixes {
     private void RestoreSavedProperties() {
       this.targetBoneNames = EditorPrefs.HasKey(prefsKeyTargetBoneNamesLength)
         ? RestoreSavedTargetBoneNames()
-        : (string[]) BoneNamesTemplates.GetDefault();
+        : (string[]) BoneNamesPresets.GetDefault();
     }
 
     private void MakeBoneNamesLayoutWithSync() {
@@ -82,7 +82,7 @@ namespace GalaxySixthSensey.AddBoneNamesSuffixes {
       var length = this.targetBoneNames.Length;
 
       try {
-        this.targetBoneNames = BoneNamesTemplates.Get(avatarName);
+        this.targetBoneNames = BoneNamesPresets.Get(avatarName);
       } catch (Exception e) {
         Debug.LogError($"Fatal error!: {e}", this);
         EditorUtility.DisplayDialog("エラー", $"Fatal error!: {e}", "OK");
