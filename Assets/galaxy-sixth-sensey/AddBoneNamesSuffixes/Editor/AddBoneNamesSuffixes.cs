@@ -187,7 +187,7 @@ namespace GalaxySixthSensey.AddBoneNamesSuffixes {
         return;
       }
 
-      AddSuffixToBoneNames(this.selectedRootBone, this.suffix, this.targetBoneNames);
+      AddSuffixToBoneNames(this.selectedRootBone, this.suffix, this.targetBoneNames, this.targetingForAll);
       EditorUtility.DisplayDialog("AddBoneNamesSuffixes > 追加", "完了", "OK");
     }
 
@@ -246,14 +246,14 @@ namespace GalaxySixthSensey.AddBoneNamesSuffixes {
     ///
     /// Please also see this.targetBoneNames.
     /// </summary>
-    private static void AddSuffixToBoneNames(GameObject target, string suffix, string[] targetBoneNames) {
-      if (targetBoneNames.Length == 0 || targetBoneNames.Contains(target.name)) {
+    private static void AddSuffixToBoneNames(GameObject target, string suffix, string[] targetBoneNames, bool targetingForAll) {
+      if (targetingForAll || targetBoneNames.Length == 0 || targetBoneNames.Contains(target.name)) {
         target.name += suffix;
       }
 
       // for each children of GameObject[]
       foreach (Transform x in target.transform) {
-        AddSuffixToBoneNames(x.gameObject, suffix, targetBoneNames);
+        AddSuffixToBoneNames(x.gameObject, suffix, targetBoneNames, targetingForAll);
       }
     }
 
